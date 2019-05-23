@@ -1,0 +1,224 @@
+// --------------------
+// Definition of variables
+$primary: #3e444ab3;
+
+
+// ----------------------------------------
+// To install Boostrap:
+// 1) Run in the client folder: $ npm i bootstrap
+// 2) Import bootstrap with the following line
+// @import '../node_modules/bootstrap/scss/bootstrap.scss';
+// 
+// To install Reactstrap:
+// 1) Run in the client folder: $ npm i reactstrap
+// 2) Go to the official documentation and take some examples: https://reactstrap.github.io/
+// import { Button } from 'reactstrap';
+// <Button color="danger">Danger!</Button>
+// ----------------------------------------
+
+
+// --------------------
+// Style reusable for all components
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.info {
+  margin: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: #5776e9;
+  color: white;
+}
+
+.info.info-danger {
+  background-color: #e73f3f;
+}
+
+// --------------------
+// Style for App component
+.App {
+  text-align: center;
+
+  .App-logo {
+    animation: App-logo-spin infinite .6s linear;
+    height: 80px;
+  }
+
+  .App-header {
+    background-color: $primary;
+    padding: 20px;
+    color: white;
+
+    a {
+      color: white;
+      padding: 0 5px;
+      text-decoration: unset;
+    }
+
+    a.active {
+      font-weight: bold;
+    }
+  }
+
+  .App-title {
+    font-size: 1.5em;
+  }
+
+  .App-intro {
+    font-size: large;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// --------------------
+// Style for Home component
+.Home {
+  p {
+    font-size: 1.2em;
+  }
+}
+
+// --------------------
+// Style for Secret component
+.Secret {
+  .result {
+    font-size: 1.2em;
+    color: $primary;
+  }
+}
+
+.form-simple .font-small {
+  font-size: 0.8rem; }
+
+.form-simple .header {
+  border-top-left-radius: .3rem;
+  border-top-right-radius: .3rem; }
+
+.form-simple input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #ff3547;
+  -webkit-box-shadow: 0 1px 0 0 #ff3547;
+  box-shadow: 0 1px 0 0 #ff3547; }
+
+.form-simple input[type=text]:focus:not([readonly]) + label {
+  color: #4f4f4f; }
+
+.form-simple input[type=password]:focus:not([readonly]) {
+  border-bottom: 1px solid #ff3547;
+  -webkit-box-shadow: 0 1px 0 0 #ff3547;
+  box-shadow: 0 1px 0 0 #ff3547; }
+
+.form-simple input[type=password]:focus:not([readonly]) + label {
+  color: #4f4f4f; }
+
+.hidden{
+  opacity: 0;
+  transform:scale(0);
+
+}
+
+.show, .hidden {
+  transition: all .5s;
+  background:rgba(0,0,0,.8);
+  position:fixed;
+  width:100vw !important;
+  max-width:100vw !important;
+
+  height:100vh;
+  margin:auto;
+  top:0;
+  left:0;
+  bottom: 0;
+  right: 0;
+  padding: 20vh 0;
+}
+.row{
+  justify-content: center;
+}
+
+.editForm input{
+width: 30vw;
+text-align: center;
+height: 7vh;
+margin-bottom: 1%;
+border-radius: 20px;
+border: black 2px solid;
+}
+
+.searchTerm{
+  width: 30%;
+  margin-top: 3vh;
+  height: 7vh;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.searchBarEdit{
+  display: flex;
+    justify-content: center;
+}
+
+.box{
+  width: 100vw;
+}
+
+/////////////////////
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  // float: left;
+  width: 100%;
+  // padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 1%;
+  z-index : 1;
+}
+
+/* Clear floats after the columns */
+// .row:after {
+//   content: "";
+//   display: table;
+//   clear: both;
+// }
+
+.rowList{
+  margin: 0% 30%;
+}
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+.boxList{
+  border: black solid 2px
+
+}
