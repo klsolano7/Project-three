@@ -20,6 +20,7 @@ export default class AddEvent extends Component {
     zipcode: "",
     description: "",
     category: "",
+    user: null
   }
 
   componentDidMount() {
@@ -97,16 +98,16 @@ addEventItem = (e) =>{
       <React.Fragment>
     <MDBContainer >
       <MDBRow>
-        <MDBCol md="6">
+        <MDBCol md="10" style={{marginTop: '1%'}}>
           <MDBCard>
             <div className="header pt-3 grey lighten-2">
-              <MDBRow className="d-flex justify-content-start">
-                <h3 className="deep-grey-text mt-3 mb-4 pb-1 mx-5">
+              <MDBRow className="d-flex justify-content-start" >
+                <h3 className="deep-grey-text mt-3 mb-4 pb-1 mx-5" >
                   Add your event
                 </h3>
               </MDBRow>
             </div>
-            <MDBCardBody className="mx-4 mt-4">
+            <MDBCardBody className="mx-4 mt-4" /*style={{padding: '0px', margin:'20px'}}*/>
               <form>
               <MDBInput name="name" type="text" onChange={e => this.handleInputChange(e)} label="Event name" group type="text" validate />
               <MDBInput name="address" type="text" onChange={e => this.handleInputChange(e)} label="Address" group type="text" validate />

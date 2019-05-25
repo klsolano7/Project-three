@@ -1,11 +1,11 @@
 const express = require("express");
 const EventCreate = require("../models/EventCreate");
-
+const { isLoggedIn } = require ('../middlewares')
 const router = express.Router();
 
-router.post("/addevent/:id", (req, res, next) => {
+router.post("/addevent/:id", isLoggedIn, (req, res, next) => {
   let { name, address, city, state, zipcode, description, category } = req.body;
-  let userID  = req.params.id;
+  let userID  = req.user._id;
   console.log(req.body)
   
   EventCreate.create({
@@ -32,6 +32,7 @@ router.get("/searchevent/:id", (req, res, next) => {
   let id = req.params.id;
   EventCreate.findById(id)
     .then(response => {
+      console.log('response',response)
       res.json(response);
     })
     .catch(err => console.error(err));

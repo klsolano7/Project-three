@@ -5,7 +5,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+    "cloudinary": "^1.14.0",
     "mdbreact": "^4.14.0",
+    "multer": "^1.4.1",
+    "multer-storage-cloudinary": "^2.2.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.3",
     "react-awesome-button": "^6.1.0",

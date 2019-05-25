@@ -20,7 +20,9 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      countries: []
+      countries: [],
+      user: null
+      
     }
   }
 
@@ -32,15 +34,19 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+        <div className='navbar' >
+          <div className="leftSide">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">LinkUP App</h1>
+          <h1 className="App-title" style={{fontSize: '15px'}}>LinkUP App</h1>
+          </div>
+          
           <NavLink to="/dashboard" exact>Dashboard</NavLink>
-          <NavLink to="/countries">Countries</NavLink>
-          <NavLink to="/add-country">Events</NavLink>
+          <NavLink to="/searchevent">Events</NavLink>
           {!api.isLoggedIn() && <NavLink to="/signup">Create Event</NavLink>}
           {!api.isLoggedIn() && <NavLink to="/login">Login</NavLink>}
           {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link>}
-          <NavLink to="/secret">Secret</NavLink>
+          {/* <NavLink to="/secret">Secret</NavLink> */}
+          </div>
         </header>
         <Switch>
           <Route path="/" exact component={Home} />
@@ -50,7 +56,7 @@ export default class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/secret" component={Secret} />
 
-          <Route path="/searchevent/:id" component={Event} />
+          <Route path="/searchevent/:id" component={Event} user={this.state.user} />
           <Route path="/editevent/:id" component={EditEvent} />
           <Route path="/favorite" component={SavedEvents} />
           <Route path="/editprofile" component={EditProfile} />

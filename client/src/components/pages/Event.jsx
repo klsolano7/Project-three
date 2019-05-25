@@ -8,11 +8,15 @@ class Event extends Component {
     this.state = {
       eventDetails: {},
         event: null,
+        
+        
  
       
     };
   }
   componentDidMount() {
+    console.log("userrrrrrrr", this.props)
+
    api.getEventDetails(this.props.match.params.id).then(details=>{
      console.log('details ',details)
      this.setState({eventDetails : details})
@@ -20,42 +24,34 @@ class Event extends Component {
   }
 
 
-  
-
-  editEventItem = (e) =>{
-  console.log("edittttt", e)
-  }
 
   render() {
+    console.log(api.getLocalStorageUser())
+    let me = this.state.eventDetails.userID === api.getLocalStorageUser()._id
+    console.log('thissssss', this)
+
     return (
       <div>
-        {/* <div><h1>Event</h1></div> */}
-        <div className="mainBox">
-          <h1>
-        {this.state.eventDetails.name}
-          </h1>
-        </div>
-        <form>
-        <div>
-        {this.state.eventDetails.address}
-        </div>
-        <div>
-        {this.state.eventDetails.city + " "}
-        {this.state.eventDetails.state}
-        </div>
-        <div>
-        {this.state.eventDetails.zipcode}
-        </div>
-        <div>
-        {this.state.eventDetails.description}
-        </div>
-        <div>
-        {this.state.eventDetails.category}
-        </div>
-        <div>
-        <Link to={`/editevent/${this.state.eventDetails._id}`}>Edit</Link>
-        </div>
-        </form>
+
+        <h1 style={{marginTop: '1%'}}>Event Details</h1>
+        <ListGroup style={{margin: '3% 20% 0% 20%', boxShadow: '20px 20px 15px -1px rgba(0,0,0,0.71)'}}>
+  <ListGroup.Item>{this.state.eventDetails.name}</ListGroup.Item>
+  <ListGroup.Item>{this.state.eventDetails.address}</ListGroup.Item>
+  <ListGroup.Item>{this.state.eventDetails.city}</ListGroup.Item>
+  <ListGroup.Item>{this.state.eventDetails.state}</ListGroup.Item>
+  <ListGroup.Item>{this.state.eventDetails.zipcode}</ListGroup.Item>
+  <ListGroup.Item>{this.state.eventDetails.description}</ListGroup.Item>
+  <ListGroup.Item>{this.state.eventDetails.category}</ListGroup.Item>
+</ListGroup>
+
+<div style={{marginTop: '3%'}}>
+{me ? 
+<Link to={`/editevent/${this.state.eventDetails._id}`}>
+  <button style={{width: '12vh', height: '5vh', borderRadius: '20px', marginTop: '4%', backgroundColor: '#00c851', color: 'white'}}>
+    Edit</button></Link>
+  : '' }
+</div>
+
       </div>
     );
   }
@@ -64,3 +60,6 @@ class Event extends Component {
 export default Event;
 
 
+// width: 15vh;
+// height: 7vh;
+// border-radius: 20px;

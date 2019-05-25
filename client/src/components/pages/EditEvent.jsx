@@ -26,7 +26,8 @@ export default class EditEvent extends Component {
       city: "",
       zipcode: "",
       description: "",
-      category: ""
+      category: "", 
+      user: null
     };
   }
 
@@ -97,7 +98,7 @@ export default class EditEvent extends Component {
       <React.Fragment>
         <MDBContainer>
           <MDBRow>
-            <MDBCol md="6">
+            <MDBCol md="6" style={{marginTop: '1%'}}>
               <MDBCard>
                 <div className="header pt-3 grey lighten-2">
                   <MDBRow className="d-flex justify-content-start">
