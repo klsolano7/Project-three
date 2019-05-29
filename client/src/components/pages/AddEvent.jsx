@@ -24,7 +24,7 @@ export default class AddEvent extends Component {
   }
 
   componentDidMount() {
-    // axios.get(`https://thelinkup.herokuapp.com/api/events/geteventlist`)
+    // axios.get(`http://localhost:5000/api/events/geteventlist`)
     //     .then(theEvent => {
     //       this.setState({
     //          event: theEvent.data.eventItems
