@@ -82,4 +82,6 @@ app.use((err, req, res, next) => {
   }
 })
 
+//app.use('/api', require('./routes/file-upload-routes')); //cloudinary
+
 module.exports = app

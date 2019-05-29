@@ -15,21 +15,39 @@ import AddEvent from './pages/AddEvent';
 import EditProfile from './pages/EditProfile';
 import Event from './pages/Event'
 import EditEvent from './pages/EditEvent'
+import AddProfilePicture from './pages/AddProfilePicture'
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      countries: [],
-      user: null
-      
+
+      user: {}
     }
+  }
+
+  componentDidMount() {
+    let user = api.getLocalStorageUser()
+    console.log(user)
+    api.getUser().then(user=>{
+      console.log('user',user)
+      this.setState({user:user.me})
+    })
   }
 
   handleLogoutClick(e) {
     api.logout()
   }
 
+  resetPic = (url) => {
+    this.setState({
+      user: { ...this.state.user, imageUrl: url }
+    })
+  }
+  resetUser = persona =>{
+    console.log("-------", persona)
+    this.setState({user:persona})
+  }
   render() {
     return (
       <div className="App">
@@ -39,7 +57,7 @@ export default class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title" style={{fontSize: '15px'}}>LinkUP App</h1>
           </div>
-          
+          {/* <img width="50px" src={this.state.user.imageUrl} /> */}
           <NavLink to="/dashboard" exact>Dashboard</NavLink>
           <NavLink to="/searchevent">Events</NavLink>
           {!api.isLoggedIn() && <NavLink to="/signup">Create Event</NavLink>}
@@ -50,16 +68,17 @@ export default class App extends Component {
         </header>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/countries" component={Countries} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/login" component={Login} />
+
+          <Route path="/dashboard" component={(props) => <Dashboard user={this.state.user} {...props} resetPic={this.resetPic} />} />
+          <Route path="/signup" component={(props) => <Signup user={this.state.user} {...props} resetPic={this.resetPic} resetUser={this.resetUser}/>} />
+          <Route path="/login" component={(props) => <Login user={this.state.user} {...props} resetPic={this.resetPic} resetUser={this.resetUser}/>} />
           <Route path="/secret" component={Secret} />
 
-          <Route path="/searchevent/:id" component={Event} user={this.state.user} />
+          <Route path="/searchevent/:id" component={Event} />
           <Route path="/editevent/:id" component={EditEvent} />
           <Route path="/favorite" component={SavedEvents} />
-          <Route path="/editprofile" component={EditProfile} />
+          <Route path="/editprofile" component={(props) => <EditProfile {...props} /> } />
+          <Route path="/addprofilepicture" component={ (props) => <AddProfilePicture {...props} resetPic={this.resetPic} /> } />
           <Route path="/addevent" component={AddEvent} />
           <Route path="/searchevent" component={SearchEvent} />
           <Route render={() => <h2>404</h2>} />

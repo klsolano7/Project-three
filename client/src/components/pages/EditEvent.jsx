@@ -169,16 +169,7 @@ export default class EditEvent extends Component {
                       type="text"
                       validate
                     />
-                    <MDBInput
-                      name="category"
-                      type="text"
-                      value={this.state.eventDetails.category}
-                      onChange={e => this.handleInputChange(e)}
-                      label="Category"
-                      group
-                      type="text"
-                      validate
-                    />
+                    
 
                   </form>
 
@@ -198,7 +189,9 @@ export default class EditEvent extends Component {
                       className="btn-block z-depth-2" 
                     >
                       Delete event
+                      
                     </MDBBtn>
+                    
                   </div>
                 </MDBCardBody>
               </MDBCard>

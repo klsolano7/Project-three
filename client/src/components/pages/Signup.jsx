@@ -44,6 +44,7 @@ class Home extends React.Component {
     api.signup(data)
       .then(result => {
         console.log('SUCCESS!')
+        this.props.resetUser(result)
         this.props.history.push("/dashboard") // Redirect to the home page
       })
       .catch(err => this.setState({ message: err.toString() }))

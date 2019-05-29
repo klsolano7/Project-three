@@ -63,6 +63,13 @@ export default {
     return service.get("/logout");
   },
 
+  getUser() {
+    return service
+    .get("/me")
+    .then(res => res.data)
+    .catch(errHandler);
+  },
+
   // This is an example on how to use this method in a different file
   // api.getCountries().then(countries => { /* ... */ })
   getCountries() {
@@ -88,9 +95,11 @@ export default {
 
   addPicture(file) {
     const formData = new FormData();
-    formData.append("picture", file);
+    formData.append("imageUrl", file);
+    console.log(formData,34234, file)
+
     return service
-      .post("/endpoint/to/add/a/picture", formData, {
+      .post("/savepic", formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
