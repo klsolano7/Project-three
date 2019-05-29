@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 // Set the public folder to "~/client/build/"
-// Example: https://thelinkup.herokuapp.com/favicon.ico => Display "~/client/build/favicon.ico"
+// Example: http://localhost:3000/favicon.ico => Display "~/client/build/favicon.ico"
 app.use(express.static(path.join(__dirname, '../client/build')))
 
 
