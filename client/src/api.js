@@ -1,10 +1,10 @@
 import axios from "axios";
+const baseURL = process.env.NODE_ENV === "production"
+? "/api"
+: "http://localhost:5000/api"; 
 
 const service = axios.create({
-  baseURL:
-    process.env.NODE_ENV === "production"
-      ? "/api"
-      : "/api",
+  baseURL:baseURL,
   withCredentials: true
 });
 
@@ -39,8 +39,6 @@ export default {
       .then(res => {
         // If we have localStorage.getItem('user') saved, the application will consider we are loggedin
         localStorage.setItem("user", JSON.stringify(res.data));
-
-        console.log("=-=-=-=-=-=-=-=-=-=-=-=-=", res);
         
         return res.data;
       })
