@@ -29,7 +29,7 @@ const createEventSchema = new mongoose.Schema({
     type: String,
     required: [true, "The event category is required"]
   },
-  picture: {
+  imageUrl: {
     type: String
   },
   userID: { type: mongoose.Schema.Types.ObjectId, ref: "User" }

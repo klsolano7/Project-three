@@ -42,7 +42,12 @@ class Event extends Component {
   <ListGroup.Item>{this.state.eventDetails.zipcode}</ListGroup.Item>
   <ListGroup.Item>{this.state.eventDetails.description}</ListGroup.Item>
   <ListGroup.Item>{this.state.eventDetails.category}</ListGroup.Item>
+
 </ListGroup>
+
+<div >
+    <img src={this.state.eventDetails.imageUrl} style={{width: '50%', marginTop:"5%"}}/>
+  </div>
 
 <div style={{marginTop: '3%'}}>
 {me ? 

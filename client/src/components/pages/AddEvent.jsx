@@ -91,7 +91,7 @@ export default class AddEvent extends Component {
     let userID = JSON.parse(localStorage.getItem("user"))._id;
 
     api
-      .addItem(userID, this.state.eventDetails)
+      .addItem(userID, this.state.eventDetails, this.state.pic)
 
       .then(result => {
         console.log(this);

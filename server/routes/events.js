@@ -2,11 +2,24 @@ const express = require("express");
 const EventCreate = require("../models/EventCreate");
 const { isLoggedIn } = require ('../middlewares')
 const router = express.Router();
+const uploader = require('../configs/cloudinary-setup');
 
-router.post("/addevent/:id", isLoggedIn, (req, res, next) => {
+
+
+router.post("/addevent/:id",uploader.single("imageUrl"), isLoggedIn, (req, res, next) => {
+  console.log("INSIDE POST ROUTE FOR CREATING EVENT")
   let { name, address, city, state, zipcode, description, category } = req.body;
   let userID  = req.user._id;
   console.log(req.body)
+
+  if (!req.file) {
+    next(new Error('No file uploaded!'));
+    return;
+  }
+
+  console.log("-=-=-=-=-=-=-=-=-==-",req.body, req.file)
+ 
+
   
   EventCreate.create({
     name,
@@ -16,15 +29,20 @@ router.post("/addevent/:id", isLoggedIn, (req, res, next) => {
     zipcode,
     description,
     category,
-    userID
+    userID,
+    imageUrl: req.file.secure_url
   })
     .then(event => {
+      console.log("YEAAAAHHHHHH IT WORKS!!!", event)
       res.json({
         success: true,
         event
       });
     })
-    .catch(err => next(err));
+    .catch(err => {
+      
+      console.log("NOTTTTT WORKING")
+      next(err)});
 });
 
 router.get("/searchevent/:id", (req, res, next) => {
@@ -38,18 +56,6 @@ router.get("/searchevent/:id", (req, res, next) => {
     .catch(err => console.error(err));
 });
 
-// router.get('/geteventlist', (req, res,next)=>{
-//   EventCreate.findById(req.user._id)
-//   data = {
-//     name: "I have checked this route"
-//   }
-
-//   res.json({
-//     success: true,
-//     data
-//   })
-
-// })
 
 router.get("/events/geteventlist", (req, res, next) => {
   EventCreate.find().then(eventItems => {
@@ -73,10 +79,19 @@ router.post(`/editevent/:id`, (req, res, next) => {
 
 router.delete('/deleteevent/:id', (req,res,next) =>{ //DELETE ITEM POST ROUTE//
   //let deleteItem = req.body.deleteItem;
-  console.log('iiiiiidddddddd---------',req.params.id)
+
   EventCreate.findByIdAndDelete(req.params.id)
   .then(deleteTheEventItem =>{
     res.json({ res: deleteTheEventItem });
+  })
+})
+
+///////edit profile information////////
+router.post(`/editprofile`, (req,res,next) =>{
+  let newProfileEdit = req.body.newProfileEdit;
+  console.log('iiiiiidddddddd',req.params.id, newProfileEdit)
+  EventCreate.findByIdAndUpdate(req.params.id, newProfileEdit).then(editedTheProfileDetails =>{
+    res.json({res: editedTheProfileDetails})
   })
 })
 

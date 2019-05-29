@@ -20,6 +20,7 @@ export default class Login extends Component {
 
   handleClick(e) {
     e.preventDefault()
+    console.log("name",this)
     api.login(this.state.username, this.state.password)
       .then(result => {
         console.log('SUCCESS!')

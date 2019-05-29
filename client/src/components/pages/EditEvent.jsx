@@ -32,8 +32,6 @@ export default class EditEvent extends Component {
   }
 
   handleInputChange(event) {
-    console.log("the input text -------------- ", event.target.value); //function to edit text input//
-    console.log("the current state ============== ", this.state.eventDetails);
     this.setState({
       eventDetails: {
         ...this.state.eventDetails,

@@ -119,6 +119,9 @@ export default {
   },
 
   addEvent(body) {
+
+
+
     return service
       .post("/events/addevent", body)
       .then(res => res.data)
@@ -172,9 +175,23 @@ export default {
   },
 
 
-  addItem(userID, newEvent){
+  addItem(userID, newEvent, thePic){
+
+    const formData = new FormData();
+    formData.append("imageUrl", thePic);
+    formData.append("name", newEvent.name)
+    formData.append("address", newEvent.address)
+    formData.append("state", newEvent.state)
+    formData.append("city", newEvent.city)
+    formData.append("zipcode", newEvent.zipcode)
+    formData.append("description", newEvent.description)
+    formData.append("category", newEvent.category)
+
+
+
+
     return service
-      .post(`/addevent/${userID}`, newEvent) //${id}
+      .post(`/addevent/${userID}`, formData, {withCredentials: true})
       .then(res => {
         return res.data;
       })
