@@ -64,7 +64,7 @@ $ npm install axios
 ```sh
 # Open a first terminal
 $ npm run dev:server
-# Run the server on http://localhost:5000/
+# Run the server on https://thelinkup.herokuapp.com/
 
 # Open a second terminal
 $ npm run dev:client
@@ -72,9 +72,9 @@ $ npm run dev:client
 ```
 
 So now you can go to 
-- http://localhost:5000/api/: A simple API call
-- http://localhost:5000/: The website based on client/build (that you can update with `$ (cd client && npm run build)`)
-- http://localhost:3000/: The last version of your React application that is calling your API with the base url "http://localhost:5000/api/"
+- https://thelinkup.herokuapp.com/api/: A simple API call
+- https://thelinkup.herokuapp.com/: The website based on client/build (that you can update with `$ (cd client && npm run build)`)
+- http://localhost:3000/: The last version of your React application that is calling your API with the base url "https://thelinkup.herokuapp.com/api/"
 
 
 
