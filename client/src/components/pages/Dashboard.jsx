@@ -101,8 +101,8 @@ export default class Dashboard extends Component {
 
 
 
-      <div className="dashboard">
-        <h2>Welcome to your dashboard {this.props.user.username}</h2>
+      <div >
+        <h1 style={{color: "black"}}>Welcome to your dashboard {this.props.user.username}</h1>
         <img style={{height: '30vh'}} src={this.props.user.imageUrl} />
 
         

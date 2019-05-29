@@ -47,7 +47,12 @@ class Home extends React.Component {
         this.props.resetUser(result)
         this.props.history.push("/dashboard") // Redirect to the home page
       })
-      .catch(err => this.setState({ message: err.toString() }))
+      .catch(err => {
+        console.log("EEEEEERRRRRRRRRRRRRRRROOOOOORRRRRRR  >>>>>>>>>>>>>>>>>>>>>> ", err)
+        this.setState({
+        message: err.toString() 
+      })
+    })
   }
 
 
