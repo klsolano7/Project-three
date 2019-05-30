@@ -35,12 +35,14 @@ class Home extends React.Component {
   
   
   handleClick(e) {
+    console.log("CLIIIIICKINGGG SIGN UP TRYING TO SIGN UP")
     e.preventDefault()
     let data = {
       username: this.state.username,
       name: this.state.name,
       password: this.state.password,
     }
+    console.log("STILL IN COMPONENT SIGNUP DATA IS", data)
     api.signup(data)
       .then(result => {
         console.log('SUCCESS!')
