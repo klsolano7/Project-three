@@ -75,8 +75,10 @@ app.use((err, req, res, next) => {
     res.status(err.status || 500)
 
     // A limited amount of information sent in production
-    if (process.env.NODE_ENV === 'production')
+    if (process.env.NODE_ENV === 'production'){
+      console.log("=-=-a=s-w=s-w=d-=-=q-s=q-s=q-=-q=s-qw=d-w=d-w=d-w=-d=wd-=w-d=w-d=w-d=-d=-w=d-w=d-w=d-w=d-w=d-=w-d=w-d=ew-d=we-d=-df=-f=s-f=s-")
       res.json(err)
+    }
     else
       res.json(JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(err))))
   }
