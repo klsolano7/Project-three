@@ -1,7 +1,7 @@
 import axios from "axios";
 const baseURL = process.env.NODE_ENV === "production"
 ? "/api"
-: "https://thelinkup.herokuapp.com/api"; 
+: "/"; 
 
 const service = axios.create({
   baseURL:baseURL,
