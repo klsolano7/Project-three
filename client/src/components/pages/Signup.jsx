@@ -52,7 +52,7 @@ class Home extends React.Component {
       .catch(err => {
         console.log("EEEEEERRRRRRRRRRRRRRRROOOOOORRRRRRR  >>>>>>>>>>>>>>>>>>>>>> ", err)
         this.setState({
-        message: err.toString() 
+        //message: err.toString() 
       })
     })
   }

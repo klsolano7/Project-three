@@ -7,7 +7,7 @@ import Secret from './pages/Secret';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import api from '../api';
-import logo from '../logo.svg';
+import team from '../team.svg';
 import Dashboard from './pages/Dashboard';
 import SavedEvents from './pages/SavedEvents';
 import SearchEvent from './pages/SeachEvent';
@@ -56,8 +56,10 @@ export default class App extends Component {
         <header className="App-header">
         <div className='navbar' >
           <div className="leftSide">
-          <img src={logo} className="App-logo" alt="logo" />
+            <NavLink to="/dashboard">
+          <img src={team} className="App-logo" alt="team" />
           <h1 className="App-title" style={{fontSize: '15px'}}>LinkUP App</h1>
+          </NavLink>
           </div>
           {/* <img width="50px" src={this.state.user.imageUrl} /> */}
           <NavLink to="/dashboard" exact>Dashboard</NavLink>

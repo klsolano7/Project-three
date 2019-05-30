@@ -12,7 +12,7 @@ export default class SearchEvent extends Component {
     event: null,
     eventItems: [],
     query: "",
-    category: "Sports",
+    category: "Community",
     location : {}
   };
 
@@ -106,11 +106,11 @@ export default class SearchEvent extends Component {
         {/* <h1 style={{marginTop:'0%', fontSize: '30px', fontWeight: "bold"}}>Search for an event</h1> */}
         <div className="searchBarEdit" style={{ marginTop: "2%" }}>
           <MDBCol md="10">
-            <h1 style={{color: "black"}}>Events in {this.state.location.city} </h1>
-            <h1 style={{color: "black"}}>Zipcode {this.state.location.postal} </h1>
+            <h1 style={{color: "white", fontWeight: 'bold'}}>Events in {this.state.location.city} </h1>
+            <h1 style={{color: "white", fontWeight: 'bold'}}>Zipcode {this.state.location.postal} </h1>
             <form className="form-inline mt-3 mb-3 box">
               <MDBIcon icon="search" />
-
+        
               <input
                 style={{ textAlign: "center" }}
                 className="form-control form-control-lg ml-3 w-75 "
@@ -120,7 +120,26 @@ export default class SearchEvent extends Component {
                 onChange={this.searchEvent}
               />
             </form>
-            <select
+            <select className="browser-default custom-select" style={{width:"50vw"}}>
+            <option value="Community">Community</option>
+            <option value="Concerts">Concerts</option>
+          <option value="Dating">Dating</option>
+          <option value="Educational">Educational</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Fashion">Fashion</option>
+           <option value="Foodie">Foodie</option>
+
+           <option value="Marketing">Marketing</option>
+           <option value="Networking">Networking</option>
+           <option value="Religion">Religion</option>
+           <option value="Social">Social</option>
+           <option value="Dating">Dating</option>
+          <option value="Sports">Sports</option>
+          <option value="Spirituality">Spirituality</option>
+          <option value="Technology">Technology</option>
+          <option value="Other">Other</option>
+        </select>
+            {/* <select
               style={{
                 marginLeft: "1%",
                 marginBottom: "1%",
@@ -132,7 +151,7 @@ export default class SearchEvent extends Component {
               <option value="Spirituality">Spirituality</option>
               <option value="Technology">Technology</option>
               <option value="Entertainment">Entertainment</option>
-            </select>
+            </select> */}
           </MDBCol>
         </div>
 

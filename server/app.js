@@ -48,6 +48,7 @@ app.use(session({
 require('./passport')(app)
 
 
+
 app.use('/api', require('./routes/index'))
 app.use('/api', require('./routes/auth'))
 app.use('/api/countries', require('./routes/countries'))
@@ -64,7 +65,6 @@ app.use('/api/*', (req, res, next) => {
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'))
 })
-
 // Error handler
 app.use((err, req, res, next) => {
   console.error("----- An error happened -----")

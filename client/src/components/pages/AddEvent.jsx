@@ -104,17 +104,15 @@ export default class AddEvent extends Component {
   // this method handles just the file upload
   handleFileUpload = e => {
     console.log("The file to be uploaded is: ", e.target.files[0]);
-    this.setState({ pic: e.target.files[0] }, ()=>{
-      this.handleSubmit(e)
+    this.setState({ pic: e.target.files[0] }, () => {
+      this.handleSubmit(e);
     });
   };
 
   // this method submits the form
   handleSubmit = e => {
     //e.preventDefault();
-
     //console.log("submitttttt", e);
-
     // api.addPicture(this.state.pic).then(res => {
     //   console.log(res);
     //   // this.props.resetPic(res.secure_url)
@@ -195,7 +193,7 @@ export default class AddEvent extends Component {
                       type="text"
                       validate
                     />
-                  
+
                     <select
                       className="browser-default custom-select"
                       name="category"
@@ -207,22 +205,23 @@ export default class AddEvent extends Component {
                       validate
                     >
                       <option>Choose your option</option>
+                      <option value="Community">Community</option>
+                      <option value="Concerts">Concerts</option>
+                      <option value="Dating">Dating</option>
+                      <option value="Educational">Educational</option>
+                      <option value="Entertainment">Entertainment</option>
+                      <option value="Fashion">Fashion</option>
+                      <option value="Foodie">Foodie</option>
+
+                      <option value="Marketing">Marketing</option>
+                      <option value="Networking">Networking</option>
+                      <option value="Religion">Religion</option>
+                      <option value="Social">Social</option>
+                      <option value="Dating">Dating</option>
                       <option value="Sports">Sports</option>
                       <option value="Spirituality">Spirituality</option>
                       <option value="Technology">Technology</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
-                      <option value="Entertainment">Entertainment</option>
+                      <option value="Other">Other</option>
                     </select>
                     {/* <MDBInput type="text" value={this.state.username} name="username" onChange={(e) => this.handleInputChange(e)} label="Your email" group type="text" validate /> */}
                   </form>
@@ -235,7 +234,10 @@ export default class AddEvent extends Component {
                   Password?
                 </a>
               </p> */}
-                  <form onSubmit={e => this.handleSubmit(e)} style={{marginTop: '2%'}}>
+                  <form
+                    onSubmit={e => this.handleSubmit(e)}
+                    style={{ marginTop: "2%" }}
+                  >
                     <input
                       type="file"
                       onChange={e => this.handleFileUpload(e)}
@@ -247,7 +249,7 @@ export default class AddEvent extends Component {
                       color="success"
                       type="button"
                       className="btn-block z-depth-2"
-                       onClick={this.addEventItem}
+                      onClick={this.addEventItem}
                     >
                       Add Event
                     </MDBBtn>

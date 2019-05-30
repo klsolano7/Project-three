@@ -36,7 +36,7 @@ export default class AddProfilePicture extends Component {
   render() {
     return (
       <div>
-        <h2>New Thing</h2>
+        <h2>Upload Image</h2>
         <form onSubmit={e => this.handleSubmit(e)}>
           <label>Name</label>
           <input type="file" onChange={e => this.handleFileUpload(e)} />
