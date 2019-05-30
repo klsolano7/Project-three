@@ -3,20 +3,20 @@ const mongoose = require("mongoose");
 const createEventSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "The event name is required"],
+    //required: [true, "The event name is required"],
     minlength: 1
   },
   address: {
     type: String,
-    required: [true, "The event address is required"]
+    //required: [true, "The event address is required"]
   },
   city: {
     type: String,
-    required: [true, "The event city is required"]
+    //required: [true, "The event city is required"]
   },
   state: {
     type: String,
-    required: [true, "The event state is required"]
+    //required: [true, "The event state is required"]
   },
   zipcode: {
     type: Number,

@@ -36,40 +36,41 @@ export default class Dashboard extends Component {
 
 
 
-
-
-
-
-
-
-
-
-      <div >
-        <h2 style={{color: "black"}}>Welcome to your dashboard </h2>
-        <h2>{this.props.user.name}</h2>
-        <img style={{height: '30vh'}} src={this.props.user.imageUrl} />
-
+      
+      <div class="mainContainer" style={{
+        backgroundImage: "url(./img/background7.jpg)",
+        backgroundSize: "cover",
+        height: "90vh",
+        width: "100%",
+        margin: "0px",
+        padding: "3%",
+        // marginBottom: "60px",
+        overflowX: "hidden"
         
-        <div className="containerDashboard" style={{ height: "50vh", marginTop: "2%" }}>
-          <div className={"top-left"}>
-            <div>
-              <Link to={`/editprofile`}>
-                <img
-                  src="./img/pencil.svg"
-                  style={{
+      }}>
+      <div class="container1">
+        <div class="miniContainer1">
+<div>
+        <Link to={`/editprofile`}>
+                 <img
+              src="./img/pencil.svg"
+                 style={{
                     height: "12vh",
                     marginBottom: "10%",
-                    padding: "8%",
-                    backgroundColor: "#ff3547",
+                     padding: "8%",
+                   backgroundColor: "#ff3547",
                     borderRadius: "20px"
                   }}
                 />
-              </Link>
-            </div>
-          </div>
-          <div className={"top-right"}>
-            <div>
-              <Link to={`/favorite`}>
+             </Link>
+{ <h4>Edit profile</h4> }
+</div>
+
+        </div>
+
+        <div class="miniContainer2">
+          <div>
+        <Link to={`/favorite`}>
                 <img
                   src="./img/blackbookmark.svg"
                   style={{
@@ -81,10 +82,31 @@ export default class Dashboard extends Component {
                   }}
                 />
               </Link>
-            </div>
-          </div>
-          <div className={"bottom-left"}>
-            <Link to={`/searchevent`}>
+              { <h4>Save event</h4> }
+              </div>
+        </div>
+      </div>
+
+      <div class="container2">
+		  	<div class="middleMiniContainer1">
+          
+        
+        <h1 style={{color: "white", fontWeight: 'bold', fontSize: '28px'}}>Welcome to your dashboard {this.props.user.name}</h1>
+        
+			</div>
+			<div class="middleMiniContainer2">
+      <img style={{height: '20vh',     marginTop: '5%',     border: "white solid 2px"}} src={this.props.user.imageUrl} />
+			</div>
+			<div class="middleMiniContainer3">
+					{/* <h1>hi</h1> */}
+			</div>
+	  </div>
+
+      <div class="container3">
+        <div class="miniContainer3">
+          <div>
+          <Link to={`/searchevent`}>
+          
               <img
                 src="./img/magnifier.svg"
                 style={{
@@ -96,10 +118,13 @@ export default class Dashboard extends Component {
                 }}
               />{" "}
             </Link>
-          </div>
-          <div className={"bottom-right"}>
-            <div>
-              <Link to={`/addevent`}>
+            <h4>Find event</h4>
+            </div>
+            </div>
+
+        <div class="miniContainer4">
+          <div>
+          <Link to={`/addevent`}>
                 <img
                   src="./img/add.svg"
                   style={{
@@ -111,10 +136,16 @@ export default class Dashboard extends Component {
                   }}
                 />
               </Link>
-            </div>
-          </div>
-        </div>
+              
+              { <h4>Add event</h4> }
+              </div>
+              
+              </div>
       </div>
+    </div>
+
+
+
 
 
 

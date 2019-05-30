@@ -62,6 +62,8 @@ body {
     .navbar{
       justify-content: space-evenly;
       background-color: #ff3547;
+      // background: rgb(0,0,0);
+      // background: linear-gradient(180deg, rgba(0,0,0,1) 2%, rgba(0,0,0,1) 29%, rgba(0,0,0,1) 61%, rgba(255,255,255,0) 100%);
     }
 
     a.active {
@@ -272,3 +274,82 @@ border: black 2px solid;
     // margin-left: 66%;
 }
 
+.mainContainer{
+  display: flex;
+  flex-direction: row;
+  padding: 3%;
+}
+
+.container1{
+  width: 33.3%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.container2{
+  width: 33.3%;
+  height: 80vh;
+}
+
+.miniContainer1{
+  display: flex;
+  width: 31vw
+}
+
+.miniContainer2{
+  display: flex;
+  width: 31vw
+}
+
+.container3{
+  width: 33.3%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  justify-content: flex-end;
+
+}
+
+.miniContainer3{
+  width: 31vw;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.miniContainer4{
+  width: 31vw;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.middleMiniContainer1{
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  align-items: center;
+  
+}
+
+.middleMiniContainer2{
+  display: flex;
+  justify-content: center;
+
+  align-items: flex-start;
+  height: 24vh;
+}
+
+.middleMiniContainer3{
+  display: flex;
+  justify-content: center;
+  height: 36vh;
+  align-items: center;
+  
+}
+
+h4{
+  color: white
+}
