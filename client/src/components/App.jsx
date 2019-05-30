@@ -29,10 +29,12 @@ export default class App extends Component {
   componentDidMount() {
     let user = api.getLocalStorageUser()
     console.log(user)
-    api.getUser().then(user=>{
-      console.log('user',user)
-      this.setState({user:user.me})
-    })
+    if(user) {
+      api.getUser().then(user=>{
+       console.log('user',user)
+       this.setState({user:user.me})
+      })
+    }
   }
 
   handleLogoutClick(e) {
