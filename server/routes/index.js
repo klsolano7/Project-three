@@ -29,6 +29,8 @@ router.get('/secret', isLoggedIn, (req, res, next) => {
 
 
 router.get('/me', isLoggedIn, (req,res,next)=>{
+
+  console.log("in me ***************")
   User.findById(req.user._id).then(me=>{
     res.json({me})
   })
