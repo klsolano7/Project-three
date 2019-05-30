@@ -34,7 +34,7 @@ export default {
 
   // This method signs up and logs in the user
   signup(userInfo) {
-    console.log('user infoooooooo', userinfo)
+    console.log('user infoooooooo', userInfo)
     return service
       .post("/signup", userInfo)
       .then(res => {
