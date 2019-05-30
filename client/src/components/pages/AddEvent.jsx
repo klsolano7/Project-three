@@ -104,20 +104,22 @@ export default class AddEvent extends Component {
   // this method handles just the file upload
   handleFileUpload = e => {
     console.log("The file to be uploaded is: ", e.target.files[0]);
-    this.setState({ pic: e.target.files[0] });
+    this.setState({ pic: e.target.files[0] }, ()=>{
+      this.handleSubmit(e)
+    });
   };
 
   // this method submits the form
   handleSubmit = e => {
-    e.preventDefault();
+    //e.preventDefault();
 
-    console.log("submitttttt", e);
+    //console.log("submitttttt", e);
 
-    api.addPicture(this.state.pic).then(res => {
-      console.log(res);
-      // this.props.resetPic(res.secure_url)
-      this.setState({ secure_url: res.secure_url });
-    });
+    // api.addPicture(this.state.pic).then(res => {
+    //   console.log(res);
+    //   // this.props.resetPic(res.secure_url)
+    //   this.setState({ secure_url: res.secure_url });
+    // });
   };
 
   render() {
@@ -238,14 +240,14 @@ export default class AddEvent extends Component {
                       type="file"
                       onChange={e => this.handleFileUpload(e)}
                     />
-                    <button type="submit">Save Image</button>
+                    {/* <button type="submit">Save Image</button> */}
                   </form>
                   <div className="text-center mb-4 mt-5">
                     <MDBBtn
                       color="success"
                       type="button"
                       className="btn-block z-depth-2"
-                      /*onClick={this.toggle}*/ onClick={this.addEventItem}
+                       onClick={this.addEventItem}
                     >
                       Add Event
                     </MDBBtn>

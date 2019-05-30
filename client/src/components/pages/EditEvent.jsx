@@ -40,15 +40,6 @@ export default class EditEvent extends Component {
     });
   }
 
-  handleClick(e) {
-    console.log("clicked", e);
-    e.preventDefault();
-    // let data = {
-    //   username: this.state.username,
-    //   name: this.state.name,
-    //   password: this.state.password,
-    // }
-  }
 
   componentDidMount() {
     console.log(this.props, 32452345432543);
