@@ -354,3 +354,54 @@ h4{
   color: white;
   font-size: 20px
 }
+
+.savePicButton{
+ 
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .uploadPicContainer{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .upload1{
+    height: 0vh;
+    
+  }
+
+  .upload2{
+    height: 10vh;
+    // display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+
+  .upload3{
+    height: 40vh;
+  }
+
+  .uploadPicBtn{
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }

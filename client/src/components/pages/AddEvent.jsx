@@ -236,12 +236,18 @@ export default class AddEvent extends Component {
               </p> */}
                   <form
                     onSubmit={e => this.handleSubmit(e)}
-                    style={{ marginTop: "2%" }}
+                    style={{ marginTop: "5%", height: '5vh' }}
                   >
+                    <div className="uploadPicBtn">
                     <input
                       type="file"
+                      id="files"
+                      class="hidden"
                       onChange={e => this.handleFileUpload(e)}
                     />
+
+                    <label for="files">Select file</label>
+                    </div>
                     {/* <button type="submit">Save Image</button> */}
                   </form>
                   <div className="text-center mb-4 mt-5">

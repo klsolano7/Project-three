@@ -33,7 +33,13 @@ class Event extends Component {
     return (
       <div>
 
-        <h1 style={{marginTop: '1%'}}>Event Details</h1>
+        
+
+        <h1 style={{marginTop: '3%', fontWeight:"bold"}}>Event Details</h1>
+
+        <div >
+    <img src={this.state.eventDetails.imageUrl} style={{width: '35vh', marginTop:"3%"}}/>
+  </div>
         <ListGroup style={{margin: '3% 20% 0% 20%', boxShadow: '20px 20px 15px -1px rgba(0,0,0,0.71)'}}>
   <ListGroup.Item>{this.state.eventDetails.name}</ListGroup.Item>
   <ListGroup.Item>{this.state.eventDetails.address}</ListGroup.Item>
@@ -45,9 +51,7 @@ class Event extends Component {
 
 </ListGroup>
 
-<div >
-    <img src={this.state.eventDetails.imageUrl} style={{width: '50%', marginTop:"5%"}}/>
-  </div>
+
 
 <div style={{marginTop: '3%'}}>
 {me ? 
@@ -65,3 +69,6 @@ class Event extends Component {
 export default Event;
 
 
+// width: 15vh;
+// height: 7vh;
+// border-radius: 20px;

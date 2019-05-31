@@ -34,12 +34,23 @@ export default class AddProfilePicture extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Upload Image</h2>
+      <div className="uploadPicContainer">
+        <div className="upload1">
+        <h2 style={{fontWeight: 'bold'}}>Upload Image</h2>
+        </div>
         <form onSubmit={e => this.handleSubmit(e)}>
-          <label>Name</label>
-          <input type="file" onChange={e => this.handleFileUpload(e)} />
-          <button type="submit">Save new thing</button>
+          
+          <div className="upload2" >
+          {/* <input type="file" onChange={e => this.handleFileUpload(e)}  /> */}
+          <button className="uploadPicBtn">
+          <input type="file" id="files" class="hidden" onChange={e => this.handleFileUpload(e)}/>
+          
+          <label for="files">Select file</label>
+          </button>
+          </div>
+          <div className="upload3">
+          <button className="savePicButton" type="submit">Save profile picture</button>
+          </div>
         </form>
       </div>
     );
