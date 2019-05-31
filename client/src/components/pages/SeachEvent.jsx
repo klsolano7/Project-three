@@ -139,26 +139,13 @@ export default class SearchEvent extends Component {
           <option value="Technology">Technology</option>
           <option value="Other">Other</option>
         </select>
-            {/* <select
-              style={{
-                marginLeft: "1%",
-                marginBottom: "1%",
-                border: "solid black 1px"
-              }}
-              onChange={this.handleChange}
-            >
-              <option value="Sports">Sports</option>
-              <option value="Spirituality">Spirituality</option>
-              <option value="Technology">Technology</option>
-              <option value="Entertainment">Entertainment</option>
-            </select> */}
+
           </MDBCol>
         </div>
 
-        {/* <h4>{this.state.event}</h4> */}
-        {/* <h4>{this.state.data.eventItems.name}</h4> */}
+
         <div style={{ color: "black", fontSize: "25px" }}>
-          {/* {this.showEventsList()} */}
+          {this.showEventsList()}
         </div>
       </div>
     );

@@ -65,6 +65,3 @@ class Event extends Component {
 export default Event;
 
 
-// width: 15vh;
-// height: 7vh;
-// border-radius: 20px;

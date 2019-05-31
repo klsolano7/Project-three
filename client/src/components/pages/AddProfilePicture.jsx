@@ -28,8 +28,7 @@ export default class AddProfilePicture extends Component {
 
       api.addPicture(this.state.pic).then(res=>{
           console.log(res)
-          this.props.resetPic(res.secure_url)
-          //this.setState({secure_url:res.secure_url})    
+          this.props.resetPic(res.secure_url) 
       })
   };
 
