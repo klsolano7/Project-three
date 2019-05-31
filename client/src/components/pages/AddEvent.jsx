@@ -34,9 +34,9 @@ export default class AddEvent extends Component {
 
   componentDidMount() {
     let user = this.props.user;
-  
+    // console.log("daaaa user", user)
 
-
+    console.log("getting ready to show the list");
     api
       .getEvents()
       .then(events => {
@@ -51,6 +51,8 @@ export default class AddEvent extends Component {
   }
 
   handleInputChange(event) {
+    console.log("the input text -------------- ", event.target.value); //function to edit text input//
+    console.log("the current state ============== ", this.state.eventDetails);
     this.setState({
       eventDetails: {
         ...this.state.eventDetails,
@@ -60,6 +62,18 @@ export default class AddEvent extends Component {
   }
 
   showEventsList = () => {
+    // return this.state.event.map((eachEvent, i) =>{
+    //   return <Link to={`/addevent`}><div key={i}>{eachEvent.name}</div></Link>
+    // })
+    // console.log("getting ready to show the list")
+    // api.getEvents()
+    //   .then(events => {
+    //     console.log("the events ============= ", events)
+    //     this.setState({
+    //       event: events
+    //     })
+    //   })
+    //   .catch(err => console.log("there was an error getting the event >>>>>>>>> ", err))
 
     if (this.state.event) {
       console.log("this is the state ---- ", this.state);
@@ -81,7 +95,7 @@ export default class AddEvent extends Component {
 
       .then(result => {
         console.log(this);
-
+        this.props.history.push("/searchevent");
       });
   };
 
@@ -95,7 +109,16 @@ export default class AddEvent extends Component {
     });
   };
 
-
+  // this method submits the form
+  handleSubmit = e => {
+    //e.preventDefault();
+    //console.log("submitttttt", e);
+    // api.addPicture(this.state.pic).then(res => {
+    //   console.log(res);
+    //   // this.props.resetPic(res.secure_url)
+    //   this.setState({ secure_url: res.secure_url });
+    // });
+  };
 
   render() {
     // console.log("hereeeeeeeeee+++++++++++++++", this.state.event);
@@ -200,8 +223,17 @@ export default class AddEvent extends Component {
                       <option value="Technology">Technology</option>
                       <option value="Other">Other</option>
                     </select>
+                    {/* <MDBInput type="text" value={this.state.username} name="username" onChange={(e) => this.handleInputChange(e)} label="Your email" group type="text" validate /> */}
                   </form>
-
+                  {/* <p className="font-small grey-text d-flex justify-content-end">
+                Forgot
+                <a
+                  href="#!"
+                  className="dark-grey-text font-weight-bold ml-1"
+                >
+                  Password?
+                </a>
+              </p> */}
                   <form
                     onSubmit={e => this.handleSubmit(e)}
                     style={{ marginTop: "2%" }}
@@ -210,6 +242,7 @@ export default class AddEvent extends Component {
                       type="file"
                       onChange={e => this.handleFileUpload(e)}
                     />
+                    {/* <button type="submit">Save Image</button> */}
                   </form>
                   <div className="text-center mb-4 mt-5">
                     <MDBBtn
@@ -227,7 +260,79 @@ export default class AddEvent extends Component {
           </MDBRow>
         </MDBContainer>
       </React.Fragment>
-      
+      // <div>
+      //   <h1>YOUR ADDED EVENTS</h1>
+      //   {/* <h4>{this.state.event}</h4> */}
+      //   {/* <h4>{this.state.data.eventItems.name}</h4> */}
+      //   {/* {this.showEventsList()} */}
+
+      //   <form className="editForm" onSubmit={this.addEventItem}>
+      //     <input
+      //       name="name"
+      //       type="text"
+      //       // value={}
+      //       onChange={e => this.handleInputChange(e)}
+      //     />{" "}
+      //     <br />
+      //     <input
+      //       name="address"
+      //       type="text"
+      //       // value={}
+      //       onChange={e => this.handleInputChange(e)}
+      //     />
+      //     <br />
+      //     <input
+      //       name="city"
+      //       type="text"
+      //       // value={}
+      //       onChange={e => this.handleInputChange(e)}
+      //     />
+      //     <br />
+      //     <input
+      //       name="state"
+      //       type="text"
+      //       // value={}
+      //       onChange={e => this.handleInputChange(e)}
+      //     />
+      //     <br />
+      //     <input
+      //       name="zipcode"
+      //       type="text"
+      //       // value={}
+      //       onChange={e => this.handleInputChange(e)}
+      //     />
+      //     <br />
+      //     <input
+      //       name="description"
+      //       type="text"
+      //       // value={}
+      //       onChange={e => this.handleInputChange(e)}
+      //     />
+      //     <br />
+      //     <input
+      //       name="category"
+      //       type="text"
+      //       // value={}
+      //       onChange={e => this.handleInputChange(e)}
+      //     />
+      //     <br />
+      //   </form>
+      //   <div>
+      //   <button
+      //       style={{
+      //         borderRadius: "15px",
+      //         fontSize: "20px",
+      //         width: "7vw",
+      //         height: "5vh",
+      //         marginBottom: "1%",
+      //         borderRadius: "20px"
+      //       }}
+      //       onClick={this.addEventItem}
+      //     >
+      //       Add event
+      //     </button>
+      //   </div>
+      // </div>
     );
   }
 }
