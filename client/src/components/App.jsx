@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, NavLink, Switch } from 'react-router-dom';
 import Home from './pages/Home';
-import Countries from './pages/Countries';
-import AddCountry from './pages/AddCountry';
 import Secret from './pages/Secret';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -56,7 +54,7 @@ export default class App extends Component {
         <header className="App-header">
         <div className='navbar' >
           <div className="leftSide">
-            <NavLink to="/dashboard">
+            <NavLink to="/">
           <img src={team} className="App-logo" alt="team" />
           <h1 className="App-title" style={{fontSize: '15px'}}>LinkUP App</h1>
           </NavLink>

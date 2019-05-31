@@ -158,7 +158,7 @@ export default class SearchEvent extends Component {
         {/* <h4>{this.state.event}</h4> */}
         {/* <h4>{this.state.data.eventItems.name}</h4> */}
         <div style={{ color: "black", fontSize: "25px" }}>
-          {this.showEventsList()}
+          {/* {this.showEventsList()} */}
         </div>
       </div>
     );
