@@ -10,7 +10,7 @@
     "mdbreact": "^4.14.0",
     "multer": "^1.4.1",
     "multer-storage-cloudinary": "^2.2.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "public-ip": "^3.1.0",
     "react": "^16.8.3",
     "react-awesome-button": "^6.1.0",
